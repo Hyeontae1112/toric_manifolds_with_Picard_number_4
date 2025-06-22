@@ -832,30 +832,6 @@ def Link(K, face, relabeling=False):
         return Simplicial_Complex(relabel(L.cpx, L.vert, list(range(1, L.m+1))))
     return L
 
-def Bistellar_flip(K, f): # dim(f) < n-1
-    L = []
-    f_bin = K.faces_bin.index(f_bin)
-    n_f = len(f)
-    new_K = []
-    for facet_bin in K.cpx_bin:
-        if f_bin | facet_bin == facet_bin:
-            L.append(f_bin^facet_bin)
-        else:
-            new_K.append(facet_bin)
-    g_bin=0
-    for i in L:
-        g_bin=g_bin|i
-    g = Cpx([g_bin])[0]
-    if len(g) - (K.n - n_f) != 1:
-        return 0
-    
-    partial_f_bin = []
-    for i in f:
-        partial_f_bin.append(f_bin-2**(i-1))
-    for pf in partial_f_bin:
-        new_K.append(pf+g_bin)
-    
-    return Simplicial_Complex(new_K)
 
 def symmetries(K):
     symm = []
