@@ -13,4 +13,6 @@ This is a companion repository for the preprint [arXiv:2504.18134
 
 `./fanlike seeds` and `./minimally non-fanlike seeds` contain the list of facets of each fanlike and minimally non-fanlike seeds, respectively.
 
+`./Oscar_fanlike_seeds`, respectively `./Oscar_minimally_non-fanlike_seeds` contains saved copies of the fanlike seeds, respectively minimally non-fanlike seeds, in Oscar format, theyr can be loaded un Julia with the command `load(<)`
 
+`Oscar.ipynb` is a Julia notebook contaning all the complete non-singular fans based on a fanlike seed from the folder `./Oscar_fanlike_seeds`.
